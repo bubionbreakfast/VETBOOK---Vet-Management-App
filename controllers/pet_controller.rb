@@ -28,3 +28,13 @@ post '/pets/:id/delete' do
   Pet.delete(params[:id])
   redirect to("/pets")
 end
+
+get '/pets/:id' do # show
+  @pets = Pet.find( params[:id] )
+  erb( :"pets/show" )
+end
+
+post '/pets/:id/delete' do
+  Pet.delete(params[:id])
+  redirect to("/pets")
+end

@@ -16,6 +16,28 @@ class Pet
     @vet_id = options['vet_id'].to_i if options['vet_id']
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM pets
+    WHERE id = $1"
+    values = [id]
+    vet = SqlRunner.run( sql, values )
+    result = Pet.new( pet.first )
+    return result
+  end
+
+  def update
+    sql = "UPDATE pets
+           SET name = $1,
+           birth_date = $2,
+           sex = $3,
+           owner = $4,
+           type = $5,
+           notes = $6
+           WHERE id = $7"
+    values = [@name, @birth_date, @sex, @owner, @type, @notes, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def save()
 
     sql = "INSERT INTO pets

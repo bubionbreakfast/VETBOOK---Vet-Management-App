@@ -1,0 +1,10 @@
+<p>Pet Name: <%= @pets.name %></p>
+<p>Date of Birth: <%= @pets.birth_date %></p>
+<p>Sex: <%= @pets.sex %></p>
+<p>Owner: <%= @pets.owner %></p>
+<p>Type: <%= @pets.type %></p>
+<p>Pet Notes: <%= @pets.notes %></p>
+<p><a href="/pets/<%= @pets.id %>/edit">Edit Pet</a></p>
+<form method="post" action="/pets/<%= @pets.id %>/delete">
+  <input type="submit" value="Delete Pet"/>
+</form>
