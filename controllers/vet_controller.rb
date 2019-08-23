@@ -24,6 +24,11 @@ post '/vets' do
   redirect to("/vets")
 end
 
+get '/vets/:id' do # show
+  @vets = Vet.find( params[:id] )
+  erb( :"vets/show" )
+end
+
 post '/vets/:id/delete' do
   Vet.delete(params[:id])
   redirect to("/vets")

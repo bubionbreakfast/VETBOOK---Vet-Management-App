@@ -11,6 +11,34 @@ class Vet
     @last_name = options['last_name']
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM vets
+    WHERE id = $1"
+    values = [id]
+    vet = SqlRunner.run( sql, values )
+    result = Vet.new( vet.first )
+    return result
+  end
+
+  # def pets
+  #   sql = "SELECT *
+  #   FROM pets
+  #   WHERE pet.id = $1"
+  #   values = [@id]
+  #   pet_data = SqlRunner.run(sql, values)
+  #   pet = Pet.map_items(pet_data).first
+  #   return film
+  # end
+
+  def update
+    sql = "UPDATE vets
+           SET first_name = $1,
+           last_name = $2
+           WHERE id = $3"
+    values = [@first_name, @last_name, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def save()
     sql = "INSERT INTO vets
     (
