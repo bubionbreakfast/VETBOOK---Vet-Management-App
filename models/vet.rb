@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 
 class Vet
 
-  attr_accessor :first_name, :last_name:, :id
+  attr_accessor :first_name, :last_name, :id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -12,7 +12,6 @@ class Vet
   end
 
   def save()
-
     sql = "INSERT INTO vets
     (
       first_name,
@@ -22,7 +21,7 @@ class Vet
     (
       $1, $2
     )
-    RETURNING id"
+    RETURNING *"
     values = [@first_name, @last_name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
