@@ -41,7 +41,7 @@ class Pet
   def self.all()
     sql = "SELECT * FROM pets"
     results = SqlRunner.run( sql )
-    return results.map { |pet| Pet.new( vet ) }
+    return results.map { |pet| Pet.new( pet ) }
   end
 
   def self.delete_all()
