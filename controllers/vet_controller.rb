@@ -38,3 +38,9 @@ post '/vets/:id' do
   Vet.new(params).update
   redirect to ("/vets")
 end
+
+post '/vets/:id/delete' do # delete
+  vet = Vet.find( params[:id] )
+  vet.delete()
+  redirect to '/vets'
+end
