@@ -34,7 +34,7 @@ get '/vets/:id/edit' do # edit
   erb( :"vets/edit" )
 end
 
-post '/vets/:id' do
+post '/vets/:id' do #update
   Vet.new(params).update
   redirect to ("/vets")
 end

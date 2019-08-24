@@ -1,9 +1,10 @@
-<form method="post" action="/pets">
-  <label for="pet-name-field">Pet Name: </label>
+<form method="post" action="/pets/<%= @pets.id %>">
+  <label for="first-name-field">Pet Name:</label>
   <input
   type="text"
   name="name"
-  id="pet-name-field"
+  id="first-name-field"
+  value="<%= @pets.name %>"
   />
 
   <label for="birth-date-field">Date of Birth: </label>
@@ -11,31 +12,36 @@
   type="text"
   name="birth_date"
   id="birth-date-field"
+  value="<%= @pets.birth_date %>"
   />
 
   <label for="sex-label">Sex of Pet: </label>
   <input type="text"
   name="sex"
   id ="sex-label"
+  value="<%= @pets.sex %>"
   />
 
   <label for="owner-field">Name of Pet Owner: </label>
   <input type="text"
   name="owner"
   id = "owner-field"
+  value="<%= @pets.owner %>"
   />
 
   <label for="type-feild">Type of Pet: </label>
   <input type="text"
   name="type"
   id ="type-feild"
+  value="<%= @pets.type %>"
   />
 
   <label for="notes-feild">Pets Notes: </label>
   <input type="text"
   name="notes"
   id = "notes-field"
+  value="<%= @pets.notes %>"
   />
 
-  <input type="submit" value="Create Pet">
+  <input type='submit' value="Edit Pet">
 </form>

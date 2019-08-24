@@ -54,7 +54,7 @@ class Pet
     (
       $1, $2, $3, $4, $5, $6, $7
     )
-    RETURNING id"
+    RETURNING *"
     values = [@name, @birth_date, @sex, @owner, @type, @notes, @vet_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
@@ -82,8 +82,17 @@ class Pet
     sql = "SELECT * FROM pets
     WHERE id = $1"
     values = [id]
-    results = SqlRunner.run( sql, values )
-    return Pet.new( results.first )
+    pet = SqlRunner.run( sql, values )
+    result = Pet.new( pet.first )
+    return result
   end
+
+  def delete()
+    sql = "DELETE FROM pets
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
 
 end

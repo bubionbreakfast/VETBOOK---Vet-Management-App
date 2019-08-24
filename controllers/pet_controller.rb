@@ -6,35 +6,41 @@ require_relative( '../models/vet.rb' )
 # require_relative( '../models/action.rb' )
 also_reload( '../models/*' )
 
-get '/pets' do
+get '/pets' do #index
   @pets = Pet.all
   # @actions = Action.all
   erb ( :"pets/index" )
 end
 
-get '/pets/new' do
+get '/pets/new' do #new
   @pets = Pet.all
   # @zombies = Zombie.all
   erb(:"pets/new")
 end
 
-post '/pets' do
+post '/pets' do #show
   pet = Pet.new(params)
   pet.save
   redirect to("/pets")
 end
 
-post '/pets/:id/delete' do
-  Pet.delete(params[:id])
-  redirect to("/pets")
-end
-
-get '/pets/:id' do # show
+get '/pets/:id' do # create
   @pets = Pet.find( params[:id] )
   erb( :"pets/show" )
 end
 
-post '/pets/:id/delete' do
-  Pet.delete(params[:id])
-  redirect to("/pets")
+get '/pets/:id/edit' do # edit
+  @pets = Pet.find( params[:id] )
+  erb( :"pets/edit" )
+end
+
+post '/pets/:id' do #update
+  Pet.new(params).update
+  redirect to ("/pets")
+end
+
+post '/pets/:id/delete' do # delete
+  pet = Pet.find( params[:id] )
+  pet.delete()
+  redirect to '/pets'
 end
