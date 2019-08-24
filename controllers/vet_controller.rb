@@ -29,9 +29,9 @@ get '/vets/:id' do # create
   erb( :"vets/show" )
 end
 
-post '/vets/:id/edit' do #edit
-  Vet.delete(params[:id])
-  erb (:"vets/edit")
+get '/vets/:id/edit' do # edit
+  @vets = Vet.find( params[:id] )
+  erb( :"vets/edit" )
 end
 
 post '/vets/:id' do
