@@ -19,5 +19,5 @@ CREATE TABLE pets
   owner VARCHAR(255),
   type VARCHAR(255),
   notes TEXT,
-  vet_id INT8 references vets(id)
+  vet_id INT8 references vets(id) on delete cascade
 );
