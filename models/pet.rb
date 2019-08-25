@@ -16,6 +16,11 @@ class Pet
     @vet_id = options['vet_id'].to_i if options['vet_id']
   end
 
+  def vet()
+    vet = Vet.find(@vet_id)
+    return vet
+  end
+
   def self.find( id )
     sql = "SELECT * FROM pets
     WHERE id = $1"
@@ -92,6 +97,12 @@ class Pet
     WHERE id = $1"
     values = [@id]
     SqlRunner.run( sql, values )
+  end
+
+  #Helper method for mapping
+  def self.map_items(pet_data)
+    result = pet_data.map { |pet| Pet.new( pet ) }
+    return result
   end
 
 

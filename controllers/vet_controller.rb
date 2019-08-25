@@ -14,7 +14,7 @@ end
 
 get '/vets/new' do #new
   @vets = Vet.all
-  # @zombies = Zombie.all
+  @pets = Pet.all
   erb(:"vets/new")
 end
 

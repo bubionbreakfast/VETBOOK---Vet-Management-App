@@ -1,5 +1,8 @@
 <p>First Name: <%= @vets.first_name %></p>
 <p>Last Name: <%= @vets.last_name %></p>
+<p>Vet ID Number: <%= @vets.id %></p>
+
+<hr/>
 <p><a href="/vets/<%= @vets.id %>/edit">Edit Vet</a></p>
 <form method="post" action="/vets/<%= @vets.id %>/delete">
   <input type="submit" value="Delete Vet"/>

@@ -3,8 +3,8 @@ require_relative( "../models/pet.rb" )
 require("pry-byebug")
 
 
-# Pet.delete_all()
-# Vet.delete_all()
+Pet.delete_all()
+Vet.delete_all()
 
 vet1 = Vet.new({
   'first_name' => 'Morag',

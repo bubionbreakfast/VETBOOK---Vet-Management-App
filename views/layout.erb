@@ -5,27 +5,21 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 
   <!-- <link rel="icon" href="/images/hazard.png" /> -->
-
-  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" type="text/css" href="/style/menu_buttons.css">
+  <link rel="stylesheet" type="text/css" href="/style/buttons.css">
+  <link rel="stylesheet" type="text/css" href="/style/forms.css">
+  <link rel="stylesheet" type="text/css" href="/style/structure.css">
+  <link rel="stylesheet" type="text/css" href="/style/tables.css">
 </head>
 <body>
 <main>
-  <nav>
-    <ul class="flex">
-      <li>
-        <a href="/pets">Pets</a>
-      </li>
-      <li>
-        <a href="/vets">Vets</a>
-      </li>
-      <!-- <li>
-        <a href="/bitings">Bitings</a>
-      </li> -->
-    </ul>
-  </nav>
+  <div class="buttonContainer">
+      <a class="button" href="/" title="home">[o]</a>
+
+        <a class="button" href="/vets" title="vets">Vets</a>
+        <a class="button" href="/pets" title="/pets">Pets</a>
+
+  </div>
   <section id="content">
   <%= yield %>
   </section>
