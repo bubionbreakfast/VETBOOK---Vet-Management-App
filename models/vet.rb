@@ -3,7 +3,8 @@ require_relative( '../db/sql_runner' )
 
 class Vet
 
-  attr_accessor :first_name, :last_name, :id
+  attr_accessor :first_name, :last_name
+  attr_reader :id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -15,10 +16,10 @@ class Vet
   return "#{@first_name} #{@last_name}"
 end
 
-  def pet()
-    pet = Pet.find(pet.id)
-    return pet
-  end
+  # def pet()
+  #   pet = Pet.find(@id)
+  #   return pet
+  # end
 
   def self.find( id )
     sql = "SELECT * FROM vets
@@ -29,15 +30,15 @@ end
     return result
   end
 
-  # def pets
-  #   sql = "SELECT *
-  #   FROM pets
-  #   WHERE pet.id = $1"
-  #   values = [@id]
-  #   pet_data = SqlRunner.run(sql, values)
-  #   pet = Pet.map_items(pet_data).first
-  #   return film
-  # end
+  def pets
+    sql = "SELECT *
+    FROM pets
+    WHERE vet_id = $1"
+    values = [@id]
+    pet_data = SqlRunner.run(sql, values)
+    pets = Pet.map_items(pet_data).first
+    return pets
+  end
 
   def update
     sql = "UPDATE vets
