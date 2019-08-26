@@ -10,11 +10,8 @@
   <% for vet in @vets %>
   <tr>
     <td><a href="/vets/<%= vet.id %>"><%= vet.first_name %></a></td>
-    <td>|</td>
     <td><a href="/vets/<%= vet.id %>"><%= vet.last_name %></a></td>
-    <td>|</td>
-    
-
+    <td></td>
   </tr>
   <% end %>
 </table>

@@ -1,12 +1,15 @@
-<p>First Name: <%= @vets.first_name %></p>
-<p>Last Name: <%= @vets.last_name %></p>
-<p>Pets List:<%= @vets.pet.name if @vets.pets %></p>
+<p>First Name: <%= @vet.first_name %></p>
+<p>Last Name: <%= @vet.last_name %></p>
+<% @vet.pets.each do |pet|%>
+  <%= pet.name %>
+<% end %>
+
 
 <hr/>
 
 
 
-<p><a href="/vets/<%= @vets.id %>/edit">Edit Vet</a></p>
-<form method="post" action="/vets/<%= @vets.id %>/delete">
+<p><a href="/vets/<%= @vet.id %>/edit">Edit Vet</a></p>
+<form method="post" action="/vets/<%= @vet.id %>/delete">
   <input type="submit" value="Delete Vet"/>
 </form>

@@ -36,7 +36,7 @@ end
     WHERE vet_id = $1"
     values = [@id]
     pet_data = SqlRunner.run(sql, values)
-    pets = Pet.map_items(pet_data).first
+    pets = Pet.map_items(pet_data)
     return pets
   end
 

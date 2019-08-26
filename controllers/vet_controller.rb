@@ -8,7 +8,7 @@ also_reload( '../models/*' )
 
 get '/vets' do #index
   @vets = Vet.all
-  
+
   erb ( :"vets/index" )
 end
 
@@ -18,14 +18,14 @@ get '/vets/new' do #new
   erb(:"vets/new")
 end
 
-post '/vets' do #show
+post '/vets' do #index
   vet = Vet.new(params)
   vet.save
   redirect to("/vets")
 end
 
-get '/vets/:id' do # create
-  @vets = Vet.find( params[:id] )
+get '/vets/:id' do # show
+  @vet = Vet.find( params[:id] )
   erb( :"vets/show" )
 end
 

@@ -21,7 +21,7 @@
     <td><%= pet.owner %></td>
     <td><%= pet.type %></td>
     <td><%= pet.notes %></td>
-    <td><%= pet.vet.pretty_name %></td>
+    <td><a href="/vets/<%= pet.vet.id %>"><%= pet.vet.pretty_name %></a></td>
   </tr>
   <% end %>
 </table>
