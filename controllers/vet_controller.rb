@@ -26,6 +26,7 @@ end
 
 get '/vets/:id' do # show
   @vet = Vet.find( params[:id] )
+  @pets = Pet.find( params[:id])
   erb( :"vets/show" )
 end
 
