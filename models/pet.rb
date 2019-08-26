@@ -1,6 +1,7 @@
 require_relative( '../db/sql_runner' )
 
 
+
 class Pet
 
   attr_accessor :name, :birth_date, :sex, :owner, :type, :notes, :vet_id
@@ -19,7 +20,6 @@ class Pet
 
   def vet()
     vet = Vet.find(@vet_id)
-
     return vet
   end
 
