@@ -1,8 +1,9 @@
 <p>First Name: <%= @vet.first_name %></p>
 <p>Last Name: <%= @vet.last_name %></p>
+<p>Pets Under Care:
 <% @vet.pets.each do |pet|%>
-  <%= pet.name %>
-<% end %>
+<a href="/pets/<%= pet.id %>"><%= pet.name %></a>
+<% end %></p>
 
 
 <hr/>
