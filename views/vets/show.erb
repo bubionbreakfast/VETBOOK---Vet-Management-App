@@ -1,8 +1,11 @@
 <p>First Name: <%= @vets.first_name %></p>
 <p>Last Name: <%= @vets.last_name %></p>
-<p>Pets List <%= @vets.pets.name %></p>
+<p>Pets List:<%= @vets.pet.name if @vets.pets %></p>
 
 <hr/>
+
+
+
 <p><a href="/vets/<%= @vets.id %>/edit">Edit Vet</a></p>
 <form method="post" action="/vets/<%= @vets.id %>/delete">
   <input type="submit" value="Delete Vet"/>

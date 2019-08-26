@@ -8,13 +8,13 @@ also_reload( '../models/*' )
 
 get '/vets' do #index
   @vets = Vet.all
-  # @actions = Action.all
+  
   erb ( :"vets/index" )
 end
 
 get '/vets/new' do #new
   @vets = Vet.all
-  @pets = Pet.all
+
   erb(:"vets/new")
 end
 
