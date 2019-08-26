@@ -1,23 +1,23 @@
 body {
-  background:  url('/images/background.jpg');
+  /* background:  url('/images/pawprint.png'); */
   background-size: 100%;
   background-repeat: no-repeat;
-  color: papayawhip;
-  font-family: 'Merriweather', serif;
+  color: grey;
+  font-family: 'Verdana', serif;
   padding: 0px;
   margin: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Lexend Zetta', sans-serif;
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
   font-size: 1.8em;
-  color: darkred;
-  margin-bottom: 20px;
+  color: #5d91a2;
+  margin-bottom: 24px;
 }
 
 a, a:link, a:visited {

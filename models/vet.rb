@@ -16,7 +16,7 @@ class Vet
 end
 
   def pet()
-    pet = Pet.find(@vet_id)
+    pet = Pet.find(pet.id)
     return pet
   end
 

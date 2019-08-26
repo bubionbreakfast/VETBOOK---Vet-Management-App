@@ -3,7 +3,8 @@ require_relative( '../db/sql_runner' )
 
 class Pet
 
-  attr_accessor :name, :birth_date, :sex, :owner, :type, :notes, :vet_id, :id
+  attr_accessor :name, :birth_date, :sex, :owner, :type, :notes, :vet_id
+  attr_reader :id
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -18,6 +19,7 @@ class Pet
 
   def vet()
     vet = Vet.find(@vet_id)
+
     return vet
   end
 
