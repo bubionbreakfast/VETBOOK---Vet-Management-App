@@ -38,7 +38,7 @@
   />
 
   <label for="vet-select">Select Vet</label>
-  <select name="vet.id" id="vet-select" >
+  <select name="vet_id" id="vet-select" >
     <% @vets.each do |vet| %>
     <option value=<%= vet.id %>><%= vet.pretty_name.capitalize %></option>
     <% end %>
