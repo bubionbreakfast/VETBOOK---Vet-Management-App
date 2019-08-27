@@ -18,6 +18,11 @@ class Pet
 
   end
 
+  def owner()
+    owner = Owner.find(@owner_id)
+    return owner
+  end
+
   def vet()
     vet = Vet.find(@vet_id)
     return vet
