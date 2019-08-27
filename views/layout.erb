@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vet Manager</title>
-<link href="https://fonts.googleapis.com/css?family=Lexend+Zetta&display=swap" rel="stylesheet">
+  <title>VetBook</title>
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Zetta&display=swap" rel="stylesheet">
   <!-- <link rel="icon" href="/images/hazard.png" /> -->
-  <link rel="stylesheet" type="text/css" href="/style/menu_buttons.css">
   <link rel="stylesheet" type="text/css" href="/style/buttons.css">
   <link rel="stylesheet" type="text/css" href="/style/forms.css">
   <link rel="stylesheet" type="text/css" href="/style/structure.css">
   <link rel="stylesheet" type="text/css" href="/style/tables.css">
 </head>
 <body>
-<main>
-  <div class="buttonContainer">
-      <a class="button" href="/" title="home">[o]</a>
-      <a class="button" href="/owners" title="owners">Owners</a>
-        <a class="button" href="/vets" title="vets">Vets</a>
-        <a class="button" href="/pets" title="/pets">Pets</a>
-
-  </div>
-  <section id="content">
-  <%= yield %>
-  </section>
-  </main>
-</body>
-</html>
+  <main>
+    <div id="mynav">
+      <a class="btn btn--danger" type="submit" href="/" title="Home">Home<a/>
+        <a class="btn btn--danger" type="submit" href="/owners" title="owners">Owners</a>
+        <a class="btn btn--danger" href="/vets" title="vets">Vets</a>
+        <a class="btn btn--danger" href="/pets" title="/pets">Pets</a>
+      </div>
+      <section id="content">
+        <%= yield %>
+      </section>
+    </main>
+  </body>
+  </html>

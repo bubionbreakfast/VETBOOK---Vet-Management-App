@@ -1,18 +1,19 @@
 .btn {
   border:0px none;
-  border-radius: 3%;
+  border-radius: 10%;
   padding: 8px 12px;
-  color: papayawhip;
+  color: darkred;
   cursor:pointer;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Lexend Zetta';
+  margin-right: 5px;
 }
 
 .btn--danger {
-  background-color: darkred;
+  border: 1px solid darkred;
 }
 
 .btn--danger:hover {
-  background-color: #730000;
+  background-color: papayawhip;
 }
 
 .btn--action:hover {

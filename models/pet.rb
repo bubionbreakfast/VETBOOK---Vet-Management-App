@@ -14,8 +14,7 @@ class Pet
     @notes = options['notes']
     @vet_id = options['vet_id'].to_i if options['vet_id']
     @owner_id = options['owner_id'].to_i if options['owner_id']
-
-  end
+end
 
   def owner()
     owner = Owner.find(@owner_id)
@@ -110,6 +109,5 @@ class Pet
     result = pet_data.map { |pet| Pet.new( pet ) }
     return result
   end
-
 
 end
