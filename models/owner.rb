@@ -103,7 +103,7 @@ class Owner
     sql = "SELECT * FROM owners
     WHERE id = $1"
     values = [id]
-    pet = SqlRunner.run( sql, values )
+    owner = SqlRunner.run( sql, values )
     result = Owner.new( owner.first )
     return result
   end

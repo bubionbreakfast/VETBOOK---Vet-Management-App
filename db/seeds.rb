@@ -40,7 +40,7 @@ vet1 = Vet.new({
       'type' => 'Dog',
       'notes' => 'Quite an elderly fox terrier, treated for Parvo on 01/05/2016',
       'vet_id' => vet1.id,
-      'owner1' => owner1.id
+      'owner_id' => owner1.id
       })
       pet1.save()
 
@@ -53,7 +53,7 @@ vet1 = Vet.new({
         'type' => 'Cat',
         'notes' => 'Quite an elderly long haired persian, treated for leptosporidium on 23/012/2018',
         'vet_id' => vet2.id,
-        # 'owner_id' => owner1.id
+        'owner_id' => owner1.id
         })
         pet2.save()
 

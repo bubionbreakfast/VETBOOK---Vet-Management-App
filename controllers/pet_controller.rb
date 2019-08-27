@@ -3,7 +3,7 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/pet.rb' )
 require_relative( '../models/vet.rb' )
-# require_relative( '../models/action.rb' )
+require_relative( '../models/owner.rb' )
 also_reload( '../models/*' )
 
 get '/pets' do #index

@@ -4,12 +4,12 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/pet.rb' )
 require_relative( '../models/vet.rb' )
-# require_relative( '../models/action.rb' )
+require_relative( '../models/owner.rb' )
 also_reload( '../models/*' )
 
 get '/owners' do #index
   @owners = Owner.all
-  erb ( :"owners/index" )
+  erb (:"owners/index")
 end
 
 get '/owners/new' do #new
@@ -17,14 +17,14 @@ get '/owners/new' do #new
   erb(:"owners/new")
 end
 
-post '/owners' do #show
+post '/owners' do #index
   owner = Owner.new(params)
   owner.save
   redirect to("/owner")
 end
 
 get '/owners/:id' do # create
-  @owner = Owner.find( params[:id] )
+  @owners = Owner.find( params[:id] )
   erb( :"owners/show" )
 end
 
