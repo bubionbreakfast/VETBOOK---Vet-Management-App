@@ -29,7 +29,7 @@ get '/owners/:id' do # create
 end
 
 get '/owners/:id/edit' do # edit
-  @owner = Pet.find( params[:id] )
+  @owners = Owner.find( params[:id] )
   erb( :"owners/edit" )
 end
 
