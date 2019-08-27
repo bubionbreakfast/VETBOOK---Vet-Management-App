@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Pet
 
-  attr_accessor :name, :birth_date, :sex, :owner, :type, :notes, :vet_id, :owner_id
+  attr_accessor :name, :birth_date, :sex, :type, :notes, :vet_id, :owner_id
   attr_reader :id
 
   def initialize( options )
@@ -10,7 +10,6 @@ class Pet
     @name = options['name']
     @birth_date = options['birth_date']
     @sex = options['sex']
-    @owner = options['owner']
     @type = options['type']
     @notes = options['notes']
     @vet_id = options['vet_id'].to_i if options['vet_id']
@@ -42,11 +41,11 @@ class Pet
            SET name = $1,
            birth_date = $2,
            sex = $3,
-           owner = $4,
-           type = $5,
-           notes = $6
-           WHERE id = $7"
-    values = [@name, @birth_date, @sex, @owner, @type, @notes, @id]
+
+           type = $4,
+           notes = $5
+           WHERE id = $6"
+    values = [@name, @birth_date, @sex, @type, @notes, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -57,7 +56,7 @@ class Pet
       name,
       birth_date,
       sex,
-      owner,
+
       type,
       notes,
       vet_id,
@@ -65,10 +64,10 @@ class Pet
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6, $7, $8
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING *"
-    values = [@name, @birth_date, @sex, @owner, @type, @notes, @vet_id, @owner_id]
+    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

@@ -7,7 +7,7 @@
     <th></th>
     <th>Date of Birth</th>
     <th>Sex</th>
-    <th>Owner</th>
+
     <th>Type</th>
     <th>Pets Notes</th>
     <th>Current Vet</th>
@@ -19,7 +19,6 @@
     <td>|</td>
     <td><%= pet.birth_date %></td>
     <td><%= pet.sex %></td>
-    <td><%= pet.owner %></td>
     <td><%= pet.type %></td>
     <td><%= pet.notes %></td>
     <td><a href="/vets/<%= pet.vet.id %>"><%= pet.vet.pretty_name %></a></td>
