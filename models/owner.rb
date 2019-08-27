@@ -15,6 +15,10 @@ class Owner
     @email = options['email']
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
   def pets
     sql = "SELECT *
     FROM pets
@@ -80,7 +84,7 @@ class Owner
   def self.all()
     sql = "SELECT * FROM owners"
     results = SqlRunner.run( sql )
-    return results.map { |owner| Owner.new( pet ) }
+    return results.map { |owner| Owner.new( owner ) }
   end
 
   def self.delete_all()

@@ -1,0 +1,23 @@
+<h1>Owners</h1>
+<p><a href="/owners/new">Create Owner</a>
+
+<table>
+  <tr>
+    <th>Name</th>
+
+    <th>Telephone Number</th>
+    <th>Street Address</th>
+    <th>Post Code</th>
+    <th>Email</th>
+  </tr>
+  <% for owner in @owners %>
+  <tr>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.pretty_name %></a></td>
+
+    <td><%= owner.telephone_number %></td>
+    <td><%= owner.street_address %></td>
+    <td><%= owner.postcode %></td>
+    <td><%= owner.email %></td>
+  </tr>
+  <% end %>
+</table>
