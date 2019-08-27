@@ -7,7 +7,7 @@ require("pry-byebug")
 
 Pet.delete_all()
 Vet.delete_all()
-Owner.delete.all()
+# Owner.delete.all()
 
 vet1 = Vet.new({
   'first_name' => 'Morag',

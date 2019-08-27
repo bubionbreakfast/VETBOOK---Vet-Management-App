@@ -41,11 +41,11 @@ class Pet
     SET name = $1,
     birth_date = $2,
     sex = $3,
-
     type = $4,
-    notes = $5
-    WHERE id = $6"
-    values = [@name, @birth_date, @sex, @type, @notes, @id]
+    notes = $5,
+    vet_id = $6
+    WHERE id = $7"
+    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -56,7 +56,6 @@ class Pet
       name,
       birth_date,
       sex,
-
       type,
       notes,
       vet_id,

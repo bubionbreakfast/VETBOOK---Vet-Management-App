@@ -24,13 +24,12 @@ CREATE TABLE owners
 
 CREATE TABLE pets
 (
-  id SERIAL8 primary key NOT NULL,
+  id SERIAL8 primary key,
   name VARCHAR(255) NOT NULL,
   birth_date VARCHAR(255) NOT NULL,
   sex VARCHAR(255) NOT NULL,
-  owner VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   notes TEXT NOT NULL,
-  vet_id INT8 references vets(id) on delete cascade NOT NULL,
+  vet_id INT8 references vets(id) on delete cascade,
   owner_id INT8 references owners(id) on delete cascade
 );
