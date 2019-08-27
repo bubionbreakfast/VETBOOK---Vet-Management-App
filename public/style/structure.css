@@ -85,6 +85,14 @@ main {
   margin-top: 1%;
 }
 
+#footer {
+  border-top: 1px solid darkred;
+  padding-left: 25px;
+  padding-top:40px;
+  /* display: flex; */
+  margin-top: 25%;
+}
+
 /* #content h1 {
   display: flex;
   align-items: center;
