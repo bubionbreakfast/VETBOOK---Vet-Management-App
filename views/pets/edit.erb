@@ -22,10 +22,14 @@
   value="<%= @pets.sex %>"
   />
 
-  <label for="owner-select">Select Owner</label>
-  <select name="owner_id" id="owner-select" >
+  <label for="owner_select">Select Owner</label>
+  <select name="owner_id" id="owner_select" selected="<%= @pets.owner_id %>">
     <% @owners.each do |owner| %>
+    <% if owner.id == @pets.owner_id %>
+    <option value=<%= owner.id %> selected><%= owner.pretty_name.capitalize %></option>
+    <% else %>
     <option value=<%= owner.id %>><%= owner.pretty_name.capitalize %></option>
+    <% end %>
     <% end %>
   </select>
 
@@ -37,7 +41,7 @@
   />
 
   <label for="notes-feild">Pets Notes: </label>
-  <input type="<textarea rows="10" cols="80"
+  <input type="textarea" rows="10" cols="80"
   name="notes"
   id = "notes-field"
   value="<%= @pets.notes %>"
@@ -50,8 +54,8 @@
     <option value=<%= vet.id %> selected><%= vet.pretty_name.capitalize %></option>
     <% else  %>
     <option value=<%= vet.id %>><%= vet.pretty_name.capitalize %></option>
-<% end %>
-<% end  %>
+    <% end %>
+    <% end  %>
   </select>
 
   <input type='submit' value="Edit Pet">

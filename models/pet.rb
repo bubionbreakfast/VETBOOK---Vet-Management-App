@@ -43,9 +43,10 @@ class Pet
     sex = $3,
     type = $4,
     notes = $5,
-    vet_id = $6
-    WHERE id = $7"
-    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @id]
+    vet_id = $6,
+    owner_id = $7
+    WHERE id = $8"
+    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id, @id]
     SqlRunner.run(sql, values)
   end
 
