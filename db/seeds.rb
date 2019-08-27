@@ -7,7 +7,7 @@ require("pry-byebug")
 
 Pet.delete_all()
 Vet.delete_all()
-# Owner.delete.all()
+Owner.delete.all()
 
 vet1 = Vet.new({
   'first_name' => 'Morag',
@@ -32,35 +32,35 @@ vet1 = Vet.new({
       owner1.save()
 
 
-    pet1 = Pet.new({
-      'name' => 'Jojo',
-      'birth_date' => '10/02/2015',
-      'sex' => 'female',
-      'owner' => 'Mrs Trumpington',
-      'type' => 'Dog',
-      'notes' => 'Quite an elderly fox terrier, treated for Parvo on 01/05/2016',
-      'vet_id' => vet1.id,
-      'owner_id' => owner1.id
-      })
-      pet1.save()
-
-
-      pet2 = Pet.new({
-        'name' => 'Fluffy',
-        'birth_date' => '19/09/2016',
-        'sex' => 'male',
-        'owner' => 'Mrs Jobsworthy',
-        'type' => 'Cat',
-        'notes' => 'Quite an elderly long haired persian, treated for leptosporidium on 23/012/2018',
-        'vet_id' => vet2.id,
+      pet1 = Pet.new({
+        'name' => 'Jojo',
+        'birth_date' => '10/02/2015',
+        'sex' => 'female',
+        'owner' => 'Mrs Trumpington',
+        'type' => 'Dog',
+        'notes' => 'Quite an elderly fox terrier, treated for Parvo on 01/05/2016',
+        'vet_id' => vet1.id,
         'owner_id' => owner1.id
         })
-        pet2.save()
+        pet1.save()
+
+
+        pet2 = Pet.new({
+          'name' => 'Fluffy',
+          'birth_date' => '19/09/2016',
+          'sex' => 'male',
+          'owner' => 'Mrs Jobsworthy',
+          'type' => 'Cat',
+          'notes' => 'Quite an elderly long haired persian, treated for leptosporidium on 23/012/2018',
+          'vet_id' => vet2.id,
+          'owner_id' => owner1.id
+          })
+          pet2.save()
 
 
 
 
 
 
-        binding.pry
-        nil
+          binding.pry
+          nil

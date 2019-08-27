@@ -10,8 +10,8 @@
   <tr>
     <td><a href="/vets/<%= vet.id %>"><%= vet.pretty_name %></a></td>
     <td><% vet.pets.each do |pet| %>
-          <a href="/pets/<%= pet.id %>"><%= pet.name %>
+      <a href="/pets/<%= pet.id %>"><%= pet.name %>
         <% end  %></td>
-  </tr>
-  <% end %>
-</table>
+      </tr>
+      <% end %>
+    </table>

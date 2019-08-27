@@ -20,7 +20,7 @@ end
 post '/owners' do #index
   owner = Owner.new(params)
   owner.save
-  redirect to("/owner")
+  redirect to("/owners")
 end
 
 get '/owners/:id' do # create

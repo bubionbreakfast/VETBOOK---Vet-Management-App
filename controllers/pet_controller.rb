@@ -14,6 +14,7 @@ end
 get '/pets/new' do #new
   @pets = Pet.all
   @vets = Vet.all
+  @owners = Owner.all
   erb(:"pets/new")
 end
 

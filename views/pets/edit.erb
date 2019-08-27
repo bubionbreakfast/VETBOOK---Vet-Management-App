@@ -26,7 +26,7 @@
   <input type="text"
   name="owner"
   id = "owner-field"
-  value="<%= @pets.owner %>"
+  value="<%= @pets.owner.pretty_name %>"
   />
 
   <label for="type-feild">Type of Pet: </label>
@@ -53,8 +53,6 @@
 <% end %>
 <% end  %>
   </select>
-
-
 
   <input type='submit' value="Edit Pet">
 </form>

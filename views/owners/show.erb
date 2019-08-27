@@ -5,8 +5,6 @@
 <p>Email: <%= @owners.email %></p>
 <hr />
 
-
-
 <p><a href="/owners/<%= @owners.id %>/edit">Edit Owner</a></p>
 <form method="post" action="/owners/<%= @owners.id %>/delete">
   <input type="submit" value="Delete Owner"/>

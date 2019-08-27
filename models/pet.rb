@@ -38,13 +38,13 @@ class Pet
 
   def update
     sql = "UPDATE pets
-           SET name = $1,
-           birth_date = $2,
-           sex = $3,
+    SET name = $1,
+    birth_date = $2,
+    sex = $3,
 
-           type = $4,
-           notes = $5
-           WHERE id = $6"
+    type = $4,
+    notes = $5
+    WHERE id = $6"
     values = [@name, @birth_date, @sex, @type, @notes, @id]
     SqlRunner.run(sql, values)
   end
@@ -106,7 +106,6 @@ class Pet
     SqlRunner.run( sql, values )
   end
 
-  #Helper method for mapping
   def self.map_items(pet_data)
     result = pet_data.map { |pet| Pet.new( pet ) }
     return result

@@ -4,11 +4,7 @@
 <% @vet.pets.each do |pet|%>
 <a href="/pets/<%= pet.id %>"><%= pet.name %></a>
 <% end %></p>
-
-
 <hr/>
-
-
 
 <p><a href="/vets/<%= @vet.id %>/edit">Edit Vet</a></p>
 <form method="post" action="/vets/<%= @vet.id %>/delete">

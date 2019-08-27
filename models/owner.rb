@@ -64,18 +64,18 @@ class Owner
   def save
     sql = "INSERT INTO owners
     (
-    first_name,
-    last_name,
-    telephone_number,
-    street_address,
-    postcode,
-    email
-  )
-  VALUES
-  (
-    $1, $2, $3, $4, $5, $6
-  )
-  RETURNING *"
+      first_name,
+      last_name,
+      telephone_number,
+      street_address,
+      postcode,
+      email
+    )
+    VALUES
+    (
+      $1, $2, $3, $4, $5, $6
+    )
+    RETURNING *"
     values = [@first_name, @last_name, @telephone_number, @street_address, @postcode, @email]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
@@ -115,7 +115,6 @@ class Owner
     SqlRunner.run( sql, values )
   end
 
-  #Helper method for mapping
   def self.map_items(owner_data)
     result = owner_data.map { |owner| Owner.new( owner ) }
     return result

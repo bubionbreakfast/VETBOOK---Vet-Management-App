@@ -13,13 +13,8 @@ class Vet
   end
 
   def pretty_name()
-  return "#{@first_name} #{@last_name}"
-end
-
-  # def pet()
-  #   pet = Pet.find(@id)
-  #   return pet
-  # end
+    return "#{@first_name} #{@last_name}"
+  end
 
   def self.find( id )
     sql = "SELECT * FROM vets
@@ -42,9 +37,9 @@ end
 
   def update
     sql = "UPDATE vets
-           SET first_name = $1,
-           last_name = $2
-           WHERE id = $3"
+    SET first_name = $1,
+    last_name = $2
+    WHERE id = $3"
     values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
@@ -90,7 +85,6 @@ end
     SqlRunner.run( sql, values )
   end
 
-  #Helper method for mapping
   def self.map_items(_data)
     result = vet_data.map { |vet| Vet.new( vet ) }
     return result
