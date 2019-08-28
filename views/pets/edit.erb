@@ -41,11 +41,12 @@
   />
 
   <label for="notes-feild">Pets Notes: </label>
-  <input type="textarea" rows="10" cols="80"
+  <textarea rows="10" cols="50"
   name="notes"
-  id = "notes-field"
-  value="<%= @pets.notes %>"
-  />
+  id = "notes-field">
+
+  <%= @pets.notes %>
+  </textarea>
 
   <label for="vet_select">Select Vet</label>
   <select name="vet_id" id="vet_select" selected="<%= @pets.vet_id %>">
@@ -59,5 +60,7 @@
   </select>
 
   <input class="btn btn--danger" type='submit' value="Edit Pet">
+
 </form>
-<input class="btn btn--danger" type="submit" value="Delete Owner"/>
+
+<input class="btn btn--danger" type="submit" value="Delete Pet"/>

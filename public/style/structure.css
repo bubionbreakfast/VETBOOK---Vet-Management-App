@@ -1,5 +1,4 @@
 body {
-  /* background:  url('/images/pawprint.png'); */
   background-size: 100%;
   background-repeat: no-repeat;
   color: grey;
@@ -18,6 +17,10 @@ h1 {
   font-size: 1.8em;
   color: #5d91a2;
   margin-bottom: 24px;
+  text-align: center;
+}
+
+h2 {
   text-align: center;
 }
 

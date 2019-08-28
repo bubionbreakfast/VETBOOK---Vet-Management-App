@@ -21,7 +21,7 @@
 }
 
 .btn--action {
-  background-color: darkolivegreen;
+  border: 1px solid darkolivegreen;
 }
 
 .btn--wrapper {
