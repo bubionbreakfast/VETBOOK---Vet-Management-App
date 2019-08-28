@@ -18,11 +18,11 @@ owners' details (avoiding repetition / inconsistencies)
 In the future this app could be extended to include additional fuctionality such as:
 --check in and check out for pets, with the ability to make appointments
 --treatments with associated pricing, allowing the owner to be billed, and the practises finances recorded.
-[/public/images/screenshot.png]()
+![Screenshot of Pets](/public/images/screenshot.png)
 
 This App is built using an Object Orientated Model. It has Classes that define individual instances of each object.
 This App is written in: 
   Ruby
   HTML
-  Css
+  CSS
   Uses RESTful Routes with Sinatra
