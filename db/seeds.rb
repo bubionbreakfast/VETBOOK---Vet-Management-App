@@ -4,7 +4,6 @@ require_relative( "../models/owner.rb" )
 
 require("pry-byebug")
 
-
 Pet.delete_all()
 Vet.delete_all()
 Owner.delete_all()
@@ -21,6 +20,12 @@ vet1 = Vet.new({
     })
     vet2.save()
 
+    vet3 = Vet.new({
+      'first_name' => 'Bill',
+      'last_name' => 'Witherington'
+      })
+      vet3.save()
+
     owner1 = Owner.new({
       'first_name' => 'Davey',
       'last_name' => 'Jones',
@@ -30,6 +35,16 @@ vet1 = Vet.new({
       'email' => 'google@gmail.com'
       })
       owner1.save()
+
+      owner2 = Owner.new({
+        'first_name' => 'John',
+        'last_name' => 'Crockett',
+        'telephone_number' => '5558922225',
+        'street_address' => '67 Fairbanks Rd',
+        'postcode' => '658976651',
+        'email' => 'goe@gmail.com'
+        })
+        owner2.save()
 
 
       pet1 = Pet.new({
@@ -57,6 +72,29 @@ vet1 = Vet.new({
           })
           pet2.save()
 
+          pet3 = Pet.new({
+            'name' => 'Petey',
+            'birth_date' => '19/01/2011',
+            'sex' => 'male',
+            'owner' => 'Ms Wohy',
+            'type' => 'Dog',
+            'notes' => 'A young long border collie, treated for kennel cough on 11/02/2014',
+            'vet_id' => vet2.id,
+            'owner_id' => owner1.id
+            })
+            pet3.save()
+
+            pet4 = Pet.new({
+              'name' => 'Luna',
+              'birth_date' => '19/09/2015',
+              'sex' => 'female',
+              'owner' => 'Mrs Aitkins',
+              'type' => 'Hamster',
+              'notes' => 'Treated for a rare form of blue tounge on 13/02/2019',
+              'vet_id' => vet3.id,
+              'owner_id' => owner2.id
+              })
+              pet4.save()
 
 
 
