@@ -104,3 +104,14 @@ main {
   display: flex;
   align-items: center;
 } */
+#dashboard {
+  height: 45px;
+  width: 75;
+  border: 1px solid #5d91a2;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  display: inline-grid;
+  padding: 10px;
+  margin-left: 5%;
+}
