@@ -1,7 +1,7 @@
 input[type="submit"] {
   text-transform: uppercase;
   font-family: 'Lexend Zetta';
-  
+
 }
 input[type="text"]{
   width: 100%;
@@ -18,7 +18,7 @@ box-sizing: border-box;
 }
 
 select {
- width: 250px;
+ width: 100%;
  padding: 5px 35px 5px 5px;
  margin: 15px 0;
  font-size: 0.8em;
