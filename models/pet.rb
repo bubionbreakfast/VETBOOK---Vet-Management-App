@@ -17,98 +17,98 @@ class Pet
   end
 
 
-    def owner()
-      owner = Owner.find(@owner_id)
-      return owner
-    end
-
-    def vet()
-      vet = Vet.find(@vet_id)
-      return vet
-    end
-
-    def self.find( id )
-      sql = "SELECT * FROM pets
-      WHERE id = $1"
-      values = [id]
-      vet = SqlRunner.run( sql, values )
-      result = Pet.new( pet.first )
-      return result
-    end
-
-    def update
-      sql = "UPDATE pets
-      SET name = $1,
-      birth_date = $2,
-      sex = $3,
-      type = $4,
-      notes = $5,
-      vet_id = $6,
-      owner_id = $7
-      WHERE id = $8"
-      values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id, @id]
-      SqlRunner.run(sql, values)
-    end
-
-    def save()
-
-      sql = "INSERT INTO pets
-      (
-        name,
-        birth_date,
-        sex,
-        type,
-        notes,
-        vet_id,
-        owner_id
-      )
-      VALUES
-      (
-        $1, $2, $3, $4, $5, $6, $7
-      )
-      RETURNING *"
-      values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()['id'].to_i
-    end
-
-    def self.all()
-      sql = "SELECT * FROM pets"
-      results = SqlRunner.run( sql )
-      return results.map { |pet| Pet.new( pet ) }
-    end
-
-    def self.delete_all()
-      sql = "DELETE FROM pets"
-      SqlRunner.run( sql )
-    end
-
-    def self.delete(id)
-      sql = "DELETE FROM pets
-      WHERE id = $1"
-      values = [id]
-      SqlRunner.run( sql, values )
-    end
-
-    def self.find( id )
-      sql = "SELECT * FROM pets
-      WHERE id = $1"
-      values = [id]
-      pet = SqlRunner.run( sql, values )
-      result = Pet.new( pet.first )
-      return result
-    end
-
-    def delete()
-      sql = "DELETE FROM pets
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run( sql, values )
-    end
-
-    def self.map_items(pet_data)
-      result = pet_data.map { |pet| Pet.new( pet ) }
-      return result
-    end
-
+  def owner()
+    owner = Owner.find(@owner_id)
+    return owner
   end
+
+  def vet()
+    vet = Vet.find(@vet_id)
+    return vet
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM pets
+    WHERE id = $1"
+    values = [id]
+    vet = SqlRunner.run( sql, values )
+    result = Pet.new( pet.first )
+    return result
+  end
+
+  def update
+    sql = "UPDATE pets
+    SET name = $1,
+    birth_date = $2,
+    sex = $3,
+    type = $4,
+    notes = $5,
+    vet_id = $6,
+    owner_id = $7
+    WHERE id = $8"
+    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def save()
+
+    sql = "INSERT INTO pets
+    (
+      name,
+      birth_date,
+      sex,
+      type,
+      notes,
+      vet_id,
+      owner_id
+    )
+    VALUES
+    (
+      $1, $2, $3, $4, $5, $6, $7
+    )
+    RETURNING *"
+    values = [@name, @birth_date, @sex, @type, @notes, @vet_id, @owner_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM pets"
+    results = SqlRunner.run( sql )
+    return results.map { |pet| Pet.new( pet ) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM pets"
+    SqlRunner.run( sql )
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM pets
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM pets
+    WHERE id = $1"
+    values = [id]
+    pet = SqlRunner.run( sql, values )
+    result = Pet.new( pet.first )
+    return result
+  end
+
+  def delete()
+    sql = "DELETE FROM pets
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.map_items(pet_data)
+    result = pet_data.map { |pet| Pet.new( pet ) }
+    return result
+  end
+
+end

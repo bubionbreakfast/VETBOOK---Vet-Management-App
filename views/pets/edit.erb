@@ -46,20 +46,20 @@
   id = "notes-field">
 
   <%= @pets.notes %>
-  </textarea>
+</textarea>
 
-  <label for="vet_select">Select Vet</label>
-  <select name="vet_id" id="vet_select" selected="<%= @pets.vet_id %>">
-    <% @vets.each do |vet| %>
-    <% if vet.id == @pets.vet_id %>
-    <option value=<%= vet.id %> selected><%= vet.pretty_name.capitalize %></option>
-    <% else  %>
-    <option value=<%= vet.id %>><%= vet.pretty_name.capitalize %></option>
-    <% end %>
-    <% end  %>
-  </select>
+<label for="vet_select">Select Vet</label>
+<select name="vet_id" id="vet_select" selected="<%= @pets.vet_id %>">
+  <% @vets.each do |vet| %>
+  <% if vet.id == @pets.vet_id %>
+  <option value=<%= vet.id %> selected><%= vet.pretty_name.capitalize %></option>
+  <% else  %>
+  <option value=<%= vet.id %>><%= vet.pretty_name.capitalize %></option>
+  <% end %>
+  <% end  %>
+</select>
 
-  <input class="btn btn--action" type='submit' value="Save Pet">
+<input class="btn btn--action" type='submit' value="Save Pet">
 
 </form>
 

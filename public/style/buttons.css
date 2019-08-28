@@ -27,3 +27,12 @@
 .btn--wrapper {
   margin: 0px 0px 30px 0px;
 }
+
+.btn--menu {
+  border: 1px solid #5d91a2;
+}
+
+.btn--menu:hover {
+  border-color: #91A25D;
+
+}

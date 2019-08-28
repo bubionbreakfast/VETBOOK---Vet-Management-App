@@ -16,11 +16,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 1.8em;
   color: #5d91a2;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 h2 {
+  text-align: center;
+}
+
+h3 {
   text-align: center;
 }
 
@@ -66,12 +70,7 @@ main {
 }
 
 .flex {
-  /* display: flex; */
   flex-direction: column;
-  /* flex-flow: column wrap; */
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
-  /* width: 15%; */
   float: left;
 }
 
@@ -82,9 +81,8 @@ main {
 
 #content {
   border-top: 1px solid darkred;
-  padding-left: 25px;
+  /* padding-left: 25px; */
   padding-top:40px;
-  /* display: flex; */
   margin-top: 1%;
 }
 
@@ -93,25 +91,25 @@ main {
   padding-left: 45px;
   padding-right: 45px;
   padding-top:20px;
-  /* display: flex; */
-  margin-top: 25%;
+  margin-top: 19%;
   height: 50px;
   display: flex;
   justify-content: space-between;
 }
 
-/* #content h1 {
-  display: flex;
-  align-items: center;
-} */
+
 #dashboard {
   height: 45px;
   width: 75;
   border: 1px solid #5d91a2;
-  border-radius: 20%;
+  border-radius: 7%;
   display: flex;
   justify-content: center;
   display: inline-grid;
   padding: 10px;
   margin-left: 5%;
+}
+#dashboard .p {
+  text-align: center;
+
 }

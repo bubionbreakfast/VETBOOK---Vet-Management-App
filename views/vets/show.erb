@@ -6,7 +6,10 @@
 <% end %></p>
 <hr/>
 
-<p><a href="/vets/<%= @vet.id %>/edit">Edit Vet</a></p>
+<div id="mynav">
+
+<a class="btn btn--action" href="/vets/<%= @vet.id %>/edit">Edit Vet</a>
 <form method="post" action="/vets/<%= @vet.id %>/delete">
   <input class="btn btn--danger" type="submit" value="Delete Vet"/>
 </form>
+</div>

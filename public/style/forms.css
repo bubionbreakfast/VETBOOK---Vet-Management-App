@@ -27,7 +27,6 @@ select {
  font-family: 'Lexend Zetta', serif;
  border: 2px solid #5d91a2;
  display: block;
- /* background-image: imag url('/images/hazard.png'); */
 }
 
 :focus {
