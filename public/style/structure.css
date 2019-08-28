@@ -88,9 +88,12 @@ main {
 #footer {
   border-top: 1px solid darkred;
   padding-left: 25px;
-  padding-top:40px;
+  padding-top:20px;
   /* display: flex; */
   margin-top: 25%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* #content h1 {
