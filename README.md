@@ -12,9 +12,10 @@ Treatment notes
 Be able to assign animals to vets
 CRUD actions for vets / animals
 If an owner has multiple animals we don't want to keep updating contact details separately for each pet.
-Extend your application to reflect that an owner can have many pets and to more sensibly keep track of 
+Extend your application to reflect that an owner can have many pets and to more sensibly keep track of
 owners' details (avoiding repetition / inconsistencies)
 
 In the future this app could be extended to include additional fuctionality such as:
 --check in and check out for pets, with the ability to make appointments
 --treatments with associated pricing, allowing the owner to be billed, and the practises finances recorded.
+![/images/screenshot.png]()
