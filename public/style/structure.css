@@ -87,7 +87,8 @@ main {
 
 #footer {
   border-top: 1px solid darkred;
-  padding-left: 25px;
+  padding-left: 45px;
+  padding-right: 45px;
   padding-top:20px;
   /* display: flex; */
   margin-top: 25%;
